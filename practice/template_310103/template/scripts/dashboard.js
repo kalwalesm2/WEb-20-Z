@@ -1,5 +1,8 @@
 let LSdata = JSON.parse(localStorage.getItem("guest-data"))||[];
 let tbody = document.querySelector("tbody");
+let filterDOM = document.getElementById("filter");
+let search = document.getElementById("search");
+let sortDOM = document.getElementById("sort");
 
 function renderDOM(data){
     tbody.innerHTML = null
@@ -35,30 +38,67 @@ function renderDOM(data){
 renderDOM(LSdata);
 
 
-let filterDOM = document.getElementById("filter");
+
 
 filterDOM.addEventListener("change",function(el){
+    let filtered;
     if(filterDOM.value === ""){
-        renderDOM(LSdata)
+        filtered = LSdata
     }else{
-        let filtered = LSdata.filter(function(ele){
+        filtered = LSdata.filter(function(ele){
             if(ele.roomType === filterDOM.value){
                 return true
             }else{
                 return false
             }
         })
-        renderDOM(filtered)
+        let searched = filtered.filter(function(ele){
+            return ele.guestName.toUpperCase().includes(search.value.toUpperCase())
+        })
+        renderDOM(searched)
     }
+    
+    
    
 })
 
-let search = document.getElementById("search");
+
 
 search.addEventListener("input",function(){
-    let searched = LSdata.filter(function(ele){
-        return ele.guestName.toUpperCase().includes(search.value.toUpperCase())
-    })
-    renderDOM(searched)
+    let filtered;
+    if(filterDOM.value === ""){
+        filtered = LSdata
+    }else{
+        filtered = LSdata.filter(function(ele){
+            if(ele.roomType === filterDOM.value){
+                return true
+            }else{
+                return false
+            }
+        })
+        let searched = filtered.filter(function(ele){
+            return ele.guestName.toUpperCase().includes(search.value.toUpperCase())
+        })
+        renderDOM(searched)
+    }
+    
+})
+
+sortDOM.addEventListener("change",function(){
+    if(sortDOM.value === ""){
+        renderDOM(LSdata)
+    }else{
+        let copyLSdata = LSdata.map(function(el){
+            return el
+        })
+        let sorted = copyLSdata.sort(function(ele1,ele2){
+           if(sortDOM.value === "High-Low"){
+            return ele2.price-ele1.price
+           }else if ("Low-High"){
+            return ele1.price-ele2.price
+           }
+        })
+        renderDOM(sorted)
+    }
 })
 
