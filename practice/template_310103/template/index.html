@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <title>WEb-111 C3</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./removed.html">Removed</a>
+    </div>
+    <div class="form">
+      <h1>Hotel Management Service</h1>
+    <form>
+      <input placeholder="Guest Name" id="guestName" type="text" />
+      <select id="roomSize">
+        <option value="">Select Size of the Room</option>
+        <option value="One Person Room">One Person Room</option>
+        <option value="Two Person Room">Two Person Room</option>
+        <option value="Three Person Room">Three Person Room</option>
+      </select>
+      <select id="roomType">
+        <option value="">Select a Room Type</option>
+        <option value="Standard">Standard</option>
+        <option value="Mini Suite or Junior Suite">Mini Suite or Junior Suite</option>
+        <option value="Suite / Executive Suite">Suite / Executive Suite</option>
+      </select>
+      <input type="number" id="price" placeholder="Cost Per Night" />
+      <select id="extra">
+        <option value="">Select Extra Services</option>
+        <option value="With Food">With Food</option>
+        <option value="Without Food">Without Food</option>
+      </select>
+      <input type="submit" value="Add Guest" />
+    </form>
+</div>
+  </body>
+  <script src="./scripts/form.js"></script>
+</html>

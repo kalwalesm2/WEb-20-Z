@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/table.css">
+    <link rel="stylesheet" href="./styles/filter.css">
+    <title>All Guests</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./removed.html">Removed</a>
+    </div>
+    <input placeholder="Search" type="text" id="search">
+    <select  id="filter">
+      <option value="">Select a Room Type</option>
+        <option value="Standard">Standard</option>
+        <option value="Mini Suite or Junior Suite">Mini Suite or Junior Suite</option>
+        <option value="Suite / Executive Suite">Suite / Executive Suite</option>
+    </select>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Room Size</th>
+          <th>Room Type</th>
+          <th>Price</th>
+          <th>Extra Services</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Tr here  -->
+      </tbody>
+    </table>
+  </body>
+  <script src="./scripts/dashboard.js"></script>
+</html>
